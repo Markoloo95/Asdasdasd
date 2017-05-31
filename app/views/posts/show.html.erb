@@ -2,4 +2,6 @@
   <%= image_tag(@post.image.url(:medium)) %>
   <br>
   <%= @post.description %>
+  <%= link_to "Írj hozzá kommentet", new_comment_path(post_id: @post.id) %>
+
 </div>

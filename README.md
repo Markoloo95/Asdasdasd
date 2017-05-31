@@ -1,3 +1,1 @@
 # Ezleszaz
-# faszkivan
-# Asdasdasd

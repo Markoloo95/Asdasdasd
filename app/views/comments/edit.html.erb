@@ -1,0 +1,9 @@
+<h1>Komment szerkesztése</h1>
+
+<%= render 'form', comment: @comment %>
+
+<%= link_to 'Mutasd', @comment %> |
+
+<%= link_to 'Vissza', comments_path %>
+
+ <textarea name="comment[picture]" id="comment_picture">

@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
+
   def new
     @post = Post.new
+    @comment = Comment.new(post_id: params[:post_id])
   end
 
   def index
@@ -15,7 +17,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(permit_post)
     if @post.save
-        flash[:success] = "Success!"
+        flash[:success] = "Siker!"
+
         redirect_to post_path(@post)
     else
       flash[:error] = @post.errors.full_messages
@@ -23,6 +26,12 @@ class PostsController < ApplicationController
 
 
     end
+  end
+
+  def destroy
+    @post.destroy
+    flash[:danger] = "Törölve!"
+    redirect_to new_post_path
   end
 
     private

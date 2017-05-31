@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Kommentek</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Kép    szöveg</th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @comments.each do |comment| %>
+      <tr>
+        <td><%= comment.name %></td>
+        <td><%= comment.body %></td>
+        <td><%= link_to 'Mutasd', comment %></td>
+        <td><%= link_to 'Szerkeszt', edit_comment_path(comment) %></td>
+        <td><%= link_to 'Töröl', comment, method: :delete, data: { confirm: 'Bizti?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Új komment', new_comment_path %>
